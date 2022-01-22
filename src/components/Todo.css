@@ -1,0 +1,57 @@
+.Todo {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.1s ease-in-out;
+    user-select: none;
+    line-height: 140%;
+    padding: 10px 5px;
+}
+
+.Todo div {
+    width: 80%;
+}
+
+.Todo p {
+    width: 100%;
+    margin: 0 20px;
+    height: fit-content;
+}
+
+.Todo:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.Remove {
+    flex: 1;
+    width: 20%;
+    display: grid;
+    place-items: center;
+    transition: all 0.2s ease-in-out;
+    z-index: 10;
+    color: rgba(0, 0, 0, 0);
+}
+
+.Remove::after {
+    content: "X";
+    width: 2px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    background-color: rgba(255, 0, 0, 0.9);
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    display: grid;
+    place-items: right;
+    color: rgba(0, 0, 0, 0);
+}
+
+.Remove:hover::after {
+    color: white;
+    width: 20%;
+}
