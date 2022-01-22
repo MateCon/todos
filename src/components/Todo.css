@@ -14,7 +14,7 @@
 }
 
 .Todo div {
-    width: 80%;
+    width: 75%;
 }
 
 .Todo p {
@@ -29,7 +29,7 @@
 
 .Remove {
     flex: 1;
-    width: 20%;
+    height: 30px;
     display: grid;
     place-items: center;
     transition: all 0.2s ease-in-out;
@@ -39,19 +39,20 @@
 
 .Remove::after {
     content: "X";
-    width: 2px;
+    width: 100%;
     height: 30px;
-    position: absolute;
-    right: 0;
     background-color: rgba(255, 0, 0, 0.9);
     text-align: center;
     transition: all 0.2s ease-in-out;
     display: grid;
     place-items: right;
     color: rgba(0, 0, 0, 0);
+    position: relative;
+    top: -28px;
+    right: -90%;
 }
 
 .Remove:hover::after {
     color: white;
-    width: 20%;
+    right: 0px;
 }
