@@ -4,6 +4,7 @@
     color: white;
     border-radius: 0 0 4px 4px;
     overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }

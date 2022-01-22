@@ -1,18 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import Todo from "./Todo";
-import "./TodoList.css";
 import { moveTodo } from "../actions/todos-actions";
 import { useParams } from "react-router-dom";
+import Todo from "./Todo";
+import "./TodoList.css";
 
-const TodoList = () => {
+const TodoList = ({ dummyRef }: any) => {
     const todos: any = useSelector(store => store);
     const params = useParams();
     const dispatch = useDispatch();
 
     const onDragEnd = (result: any) => {
         if (!result.destination) return;
-        console.log(result.source, result.destination)
         dispatch(moveTodo(result.source.index, result.destination.index));
     };
 
@@ -29,6 +28,7 @@ const TodoList = () => {
                             if (!filterTodo(todo)) return null;
                             return <Todo key={todo.id} {...{ ...todo, index }}>{todo.content}</Todo>
                         })}
+                        <div ref={dummyRef} />
                     </ul>
                 )}
             </Droppable>
