@@ -10,8 +10,8 @@ const Filters = () => {
         <div className="Filters">
             <Link to="/"><button className={!params.filter ? 'active' : ''}>All</button></Link>
             <Link to="/active"><button style={{
-                borderLeft: "1px solid rgba(0, 0, 0, 0.6)",
-                borderRight: "1px solid rgba(0, 0, 0, 0.6)"
+                borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
+                borderRight: "1px solid rgba(255, 255, 255, 0.2)"
             }} className={params.filter === 'active' ? 'active' : ''}>Active</button></Link>
             <Link to="/completed"><button className={params.filter === "completed" ? 'active' : ''}>Completed</button></Link>
         </div>
